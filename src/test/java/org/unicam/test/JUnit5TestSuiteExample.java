@@ -1,4 +1,4 @@
-package main;
+package org.unicam.test;
 
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.platform.suite.api.SelectClasses;

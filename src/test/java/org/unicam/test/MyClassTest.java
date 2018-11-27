@@ -1,4 +1,4 @@
-package main;
+package org.unicam.test;
 
 
 import static org.junit.Assert.assertEquals;
@@ -15,8 +15,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.condition.EnabledIf;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-
-import main.MyClass;
+import org.unicam.main.MyClass;
 
 public class MyClassTest {
   

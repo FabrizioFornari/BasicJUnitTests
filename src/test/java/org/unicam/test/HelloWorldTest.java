@@ -1,4 +1,4 @@
-package main;
+package org.unicam.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,6 +12,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.unicam.main.HelloWorld;
+
 import static org.junit.jupiter.api.condition.OS.LINUX;
 import static org.junit.jupiter.api.condition.OS.MAC;
 import static org.junit.jupiter.api.condition.OS.WINDOWS;
