@@ -52,7 +52,7 @@ public class MyClassTest {
   }
   
   @ParameterizedTest
-  @ValueSource(strings = { "pippip", "radar", "able was I ere I saw elba" })
+  @ValueSource(strings = { "pippo", "radar", "able was I ere I saw elba" })
   void palindromes(String candidate) {
 	  MyClass tester = new MyClass();
       assertTrue(tester.isPalindrome(candidate));
