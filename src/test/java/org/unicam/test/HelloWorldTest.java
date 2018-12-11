@@ -42,6 +42,11 @@ public class HelloWorldTest {
 	}
 
 	@Test
+	void testHelloShouldReturnAString() {
+		assertNotNull(HelloWorld.hello());
+	}
+	
+	@Test
 	@DisplayName("Custom test name containing spaces")
 	void testWithDisplayNameContainingSpaces() {
 	}

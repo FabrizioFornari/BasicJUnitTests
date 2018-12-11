@@ -1,37 +1,81 @@
 package org.unicam.test;
 
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assume.assumeTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
+import static org.junit.jupiter.api.Assumptions.assumeFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTimeout;
+
 
 import java.time.LocalDate;
+import static java.time.Duration.ofMillis;
 
-import org.junit.Assume;
-import org.junit.Test;
+//import org.junit.Assume;
+//import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.condition.EnabledIf;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+
 import org.unicam.main.MyClass;
 
 public class MyClassTest {
   
-  @Test(expected = IllegalArgumentException.class)
-  public void testExceptionIsThrown() {
-    MyClass tester = new MyClass();
-    tester.multiply(1000, 5);
-  }
-
   @Test
-  public void testMultiply() {
-	//Assume.assumeFalse(System.getProperty("os.name").contains("Mac OS X"));
-    MyClass tester = new MyClass();
-    assertEquals("10 x 5 must be 50", 50, tester.multiply(10, 5));
+  public void testExceptionIsThrown() {
+	  
+	  assertThrows(IllegalArgumentException.class,
+	            ()->{
+	            	MyClass.multiply(1000, 5);
+	            });
+//    MyClass tester = assertThrows(tester.multiply(1000, 5), () -> {
+//        throw new IllegalArgumentException("a message");
+//    });
+ 
   }
   
+  @Test
+  public void exceptionTesting() {
+        Throwable exception = assertThrows(IllegalArgumentException.class, () -> {
+            throw new IllegalArgumentException("a message");
+        });
+        assertEquals("a message", exception.getMessage());
+    }
+
+  @Test
+  public void testMultiplyShouldReturnProperMultiplicationResult() {
+	//Assume.assumeFalse(System.getProperty("os.name").contains("Mac OS X"));
+    MyClass tester = new MyClass(); // MyClass is tested
+    
+    // assert statements
+    assertEquals(60, tester.multiply(10, 5), "10 x 5 must be 50");
+  }
+  
+  @Test
+  public void testMultiplyShouldAcceptAnyValue() {
+    MyClass tester = new MyClass(); // MyClass is tested
+    
+    // assert statements
+    assertEquals(50, tester.multiply(10, 5), "10 x 5 must be 50");
+    assertEquals(5000, tester.multiply(1000, 5), "1000 x 5 must be 5000");
+  }
+  
+  @Test
+  public void multiplicationOfXByOneShouldReturnX() {
+	//Assumption
+	assumeFalse(System.getProperty("os.name").contains("Mac OS X"));
+	
+	MyClass tester = new MyClass();// MyClass is tested
+	
+	// assert statements
+	assertEquals(22, tester.multiply(22, 1), "22 x 1 must be 22");
+	assertEquals(22, tester.multiply(1, 22), "1 x 22 must be 22");
+	assertEquals(1, tester.multiply(1, 1), "1 x 1 must be 1");
+  }
   
   @Test
   public void multiplicationOfZeroIntegersShouldReturnZero() {
@@ -43,6 +87,7 @@ public class MyClassTest {
       assertEquals(0, tester.multiply(0, 0), "0 x 0 must be 0");
       
   }
+  
   
   @ParameterizedTest
   @ValueSource(strings = { "Hello", "JUnit" })
@@ -58,7 +103,6 @@ public class MyClassTest {
   }
   
  
-  
   @Test // Multi-line script, custom engine name and custom reason.
   @EnabledIf(value = {
     "load('nashorn:mozilla_compat.js')",
@@ -80,8 +124,8 @@ public class MyClassTest {
   @Disabled
   @ValueSource(ints = {1,2,3,-1})
   void test(int i) {
-	  assumeTrue(i >=0);
-	  // assumeTrue(i >=0, "Wrong Input, Only positive ints please");
+	  assumeTrue(i >=0, "Wrong Input, Only positive ints please");
+	  
   	try {
   		Thread.sleep(i);
   	} catch (InterruptedException e) {
@@ -89,5 +133,14 @@ public class MyClassTest {
   	}
   }
   
+  @Test
+  void timeoutExceeded() {
+  // The following assertion fails with an error message similar to:
+  // execution exceeded timeout of 10 ms by 91 ms
+  assertTimeout(ofMillis(10), () -> {
+	  // Simulate task that takes more than 10 ms.
+	  Thread.sleep(100);
+  	});
+  }
   
 }
