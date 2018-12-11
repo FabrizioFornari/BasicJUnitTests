@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.condition.OS.LINUX;
 import static org.junit.jupiter.api.condition.OS.MAC;
 import static org.junit.jupiter.api.condition.OS.WINDOWS;
 
-class HelloWorldTest {
+public class HelloWorldTest {
 
 	private HelloWorld hW;
 	private String inputNumber;
@@ -98,7 +98,7 @@ class HelloWorldTest {
 	  }
 	
 	@Test
-	  @EnabledOnOs(WINDOWS)
+	  @EnabledOnOs(LINUX)
 	  void onlyOnLinuxOs() {
 		  HelloWorld tester = new HelloWorld();
 		  tester.getOS().contains("Linux");
