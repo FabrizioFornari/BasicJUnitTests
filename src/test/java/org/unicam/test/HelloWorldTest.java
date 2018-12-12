@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -12,11 +11,12 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import org.junit.jupiter.api.condition.EnabledOnOs;
-import org.unicam.main.HelloWorld;
 
 import static org.junit.jupiter.api.condition.OS.LINUX;
 import static org.junit.jupiter.api.condition.OS.MAC;
 import static org.junit.jupiter.api.condition.OS.WINDOWS;
+
+import org.unicam.main.HelloWorld;
 
 public class HelloWorldTest {
 
@@ -65,14 +65,14 @@ public class HelloWorldTest {
 	@Test
 	void testNumber() {
 		inputNumber = hW.printNumber(3);
-		Assertions.assertEquals(inputNumber, "n: " + 3);
+		assertEquals(inputNumber, "n: " + 3);
 	}
 
 	@DisplayName("Custom testNumberFizz")
 	@Test
 	void testNumberFizz() {
 		inputNumber = hW.printNumber(3);
-		Assertions.assertNotEquals(inputNumber, "Fizz");
+		assertNotEquals(inputNumber, "Fizz");
 	}
 
 	@Test
@@ -108,5 +108,6 @@ public class HelloWorldTest {
 		  HelloWorld tester = new HelloWorld();
 		  tester.getOS().contains("Linux");
 	  }
+	
 	
 }
