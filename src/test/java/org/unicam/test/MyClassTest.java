@@ -13,8 +13,6 @@ import static org.junit.jupiter.api.Assertions.assertTimeout;
 import java.time.LocalDate;
 import static java.time.Duration.ofMillis;
 
-//import org.junit.Assume;
-//import org.junit.Test;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.condition.EnabledIf;
@@ -33,9 +31,6 @@ public class MyClassTest {
 	            ()->{
 	            	tester.multiply(1000, 5);
 	            });
-//    MyClass tester = assertThrows(tester.multiply(1000, 5), () -> {
-//        throw new IllegalArgumentException("a message");
-//    });
  
   }
   
