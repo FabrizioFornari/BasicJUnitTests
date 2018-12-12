@@ -28,9 +28,10 @@ public class MyClassTest {
   @Test
   public void testExceptionIsThrown() {
 	  
+	  MyClass tester = new MyClass(); // MyClass is tested
 	  assertThrows(IllegalArgumentException.class,
 	            ()->{
-	            	MyClass.multiply(1000, 5);
+	            	tester.multiply(1000, 5);
 	            });
 //    MyClass tester = assertThrows(tester.multiply(1000, 5), () -> {
 //        throw new IllegalArgumentException("a message");
