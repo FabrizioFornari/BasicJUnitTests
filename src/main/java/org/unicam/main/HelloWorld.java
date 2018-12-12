@@ -14,7 +14,7 @@ public class HelloWorld {
 	}
 	
 	public String printNumber(int n) {
-		System.out.println("n: "+n);
+		//System.out.println("n: "+n);
 		return("n: "+n);
 	}
 	
