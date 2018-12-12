@@ -17,36 +17,45 @@ import static org.junit.jupiter.api.condition.OS.LINUX;
 import static org.junit.jupiter.api.condition.OS.MAC;
 import static org.junit.jupiter.api.condition.OS.WINDOWS;
 
+import java.util.logging.Logger;
+
 import org.unicam.main.HelloWorld;
 
 public class HelloWorldTest {
 
 	private HelloWorld hW;
 	private String inputNumber;
+	
+	//To prove when code gets executed
+	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
+		LOGGER.info("@BeforeAll - executes once before all test methods in this class");
 	}
 
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
+		LOGGER.info("@AfterAll - executes once after all test methods in this class");
 	}
 
 	@BeforeEach
 	void setUp() throws Exception {
 		hW = new HelloWorld();
+		LOGGER.info("@BeforeEach - executes before each test methods in this class");
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		hW = null;
+		LOGGER.info("@AfterEach - executes after each test methods in this class");
 	}
 
 	@Test
 	void testHelloShouldReturnAString() {
 		assertNotNull(HelloWorld.hello());
 	}
-	
+
 	@Test
 	@Tag("display")
 	@DisplayName("Custom test name containing spaces")
@@ -91,32 +100,31 @@ public class HelloWorldTest {
 	void testMain() {
 		fail("Not yet implemented");
 	}
-	
-	@Test
-	  @EnabledOnOs(MAC)
-	  void onlyOnMacOs() {
-		  HelloWorld tester = new HelloWorld();
-		  tester.getOS().equals("Mac OS X");
-	  }
 
 	@Test
-	  @EnabledOnOs(WINDOWS)
-	  void onlyOnWindowsOs() {
-		  HelloWorld tester = new HelloWorld();
-		  tester.getOS().contains("Windows");
-	  }
-	
+	@EnabledOnOs(MAC)
+	void onlyOnMacOs() {
+		HelloWorld tester = new HelloWorld();
+		tester.getOS().equals("Mac OS X");
+	}
+
 	@Test
-	  @EnabledOnOs(LINUX)
-	  void onlyOnLinuxOs() {
-		  HelloWorld tester = new HelloWorld();
-		  tester.getOS().contains("Linux");
-	  }
-	
+	@EnabledOnOs(WINDOWS)
+	void onlyOnWindowsOs() {
+		HelloWorld tester = new HelloWorld();
+		tester.getOS().contains("Windows");
+	}
+
+	@Test
+	@EnabledOnOs(LINUX)
+	void onlyOnLinuxOs() {
+		HelloWorld tester = new HelloWorld();
+		tester.getOS().contains("Linux");
+	}
 
 	@Test
 	@Tag("taxes")
 	void testingTaxCalculation() {
 	}
-	
+
 }
