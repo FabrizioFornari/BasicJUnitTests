@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import org.junit.jupiter.api.condition.EnabledOnOs;
@@ -47,22 +48,25 @@ public class HelloWorldTest {
 	}
 	
 	@Test
+	@Tag("display")
 	@DisplayName("Custom test name containing spaces")
 	void testWithDisplayNameContainingSpaces() {
 	}
 
 	@Test
+	@Tag("display")
 	@DisplayName(" °□°） ")
 	void testWithDisplayNameContainingSpecialCharacters() {
 	}
 
 	@Test
+	@Tag("display")
 	@DisplayName("😈")
 	void testWithDisplayNameContainingEmoji() {
 	}
 
-	@DisplayName("Custom testNumber")
 	@Test
+	@DisplayName("Custom testNumber")
 	void testNumber() {
 		inputNumber = hW.printNumber(3);
 		assertEquals(inputNumber, "n: " + 3);
@@ -109,5 +113,10 @@ public class HelloWorldTest {
 		  tester.getOS().contains("Linux");
 	  }
 	
+
+	@Test
+	@Tag("taxes")
+	void testingTaxCalculation() {
+	}
 	
 }

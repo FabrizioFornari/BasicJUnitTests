@@ -2,7 +2,6 @@ package org.unicam.test;
 
 
 import org.junit.platform.runner.JUnitPlatform;
-import org.junit.platform.suite.api.SelectPackages;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.SuiteDisplayName;
 import org.junit.runner.RunWith;
@@ -11,6 +10,7 @@ import org.junit.runner.RunWith;
 @SuiteDisplayName("JUnit 4 Suite Demo")
 //@SelectPackages("org.unicam.test")
 @SelectClasses({HelloWorldTest.class , MyClassTest.class})
+//@ExcludeTags("display")
 public class Suite1 {
 }
 
