@@ -46,12 +46,12 @@
 		</dependency>
 		
 		<!-- The junit-vintage-engine dependency allows us to run tests which use JUnit 3 or 4. -->
-		<dependency>
+		<!--<dependency>
 			<groupId>org.junit.vintage</groupId>
 			<artifactId>junit-vintage-engine</artifactId>
-			<version>${junit.jupiter.version}</version>
+			<version>${junit.jupiter.version}</version>-->
 			<!--<scope>test</scope> -->
-		</dependency>
+		<!--</dependency> -->
 		
 		<!-- Public API for configuring and launching test plans — typically used by IDEs and build tools. -->
 		<!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher -->
