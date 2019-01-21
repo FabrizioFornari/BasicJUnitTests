@@ -27,27 +27,31 @@ public class HelloWorldTest {
 	private String inputNumber;
 	
 	//To prove when code gets executed
-	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+	private final static Logger LOGGER = Logger.getLogger("HelloWorldTest");
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		LOGGER.info("@BeforeAll - executes once before all test methods in this class");
+//		Thread.sleep(1000);
 	}
 
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
 		LOGGER.info("@AfterAll - executes once after all test methods in this class");
+//		Thread.sleep(1000);
 	}
 
 	@BeforeEach
 	void setUp() throws Exception {
 		hW = new HelloWorld();
+//		Thread.sleep(1000);
 		LOGGER.info("@BeforeEach - executes before each test methods in this class");
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		hW = null;
+//		Thread.sleep(1000);
 		LOGGER.info("@AfterEach - executes after each test methods in this class");
 	}
 
@@ -84,7 +88,7 @@ public class HelloWorldTest {
 	@DisplayName("Custom testNumberFizz")
 	@Test
 	void testNumberFizz() {
-		inputNumber = hW.printNumber(3);
+		inputNumber = hW.printNumber(7);
 		assertNotEquals(inputNumber, "Fizz");
 	}
 

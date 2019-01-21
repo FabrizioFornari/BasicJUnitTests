@@ -10,7 +10,7 @@ public class HelloWorld {
 	public static String hello() {
 		String hello = "Hello World!\n";		
 		hello=hello+System.getProperty("os.name");		
-		return null;
+		return hello;
 	}
 	
 	public String printNumber(int n) {

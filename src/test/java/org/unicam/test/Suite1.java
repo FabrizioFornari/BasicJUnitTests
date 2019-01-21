@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(JUnitPlatform.class)
 @SuiteDisplayName("JUnit Suite Demo")
-//@SelectPackages("org.unicam.test")
+
 @SelectClasses({HelloWorldTest.class , MyClassTest.class})
-//@ExcludeTags("display")
+
 public class Suite1 {
 }
 

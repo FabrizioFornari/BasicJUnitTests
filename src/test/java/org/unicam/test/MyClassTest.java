@@ -46,7 +46,7 @@ public class MyClassTest {
 		MyClass tester = new MyClass(); // MyClass is tested
 
 		// assert statements
-		assertEquals(60, tester.multiply(10, 5), "10 x 5 must be 50");
+		assertEquals(50, tester.multiply(10, 5), "10 x 5 must be 50");
 	}
 
 	@Test
