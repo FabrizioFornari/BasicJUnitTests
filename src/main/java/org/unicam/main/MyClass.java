@@ -2,7 +2,6 @@ package org.unicam.main;
 
 public class MyClass {
 
-	//test
 	public int multiply(int x, int y) {
 
 		if (x > 1000) {
