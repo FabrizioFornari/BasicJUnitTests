@@ -10,7 +10,7 @@ https://shields.io
 
 
 [Travis CI]
-[![Build Status](https://travis-ci.org/FabrizioFornari/BasicJUnitTests.svg?branch=master)](https://travis-ci.org/FabrizioFornari/BasicJUnitTests) 
+[![Build Status](https://img.shields.io/travis/:FabrizioFornari/:BasicJUnitTests.svg)](https://travis-ci.org/FabrizioFornari/BasicJUnitTests) 
 
 
 
