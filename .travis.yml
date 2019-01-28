@@ -1,4 +1,6 @@
 # this is a java project using maven
 language: java
 # install
-install: mvn install
+install: true
+script:
+- mvn install
