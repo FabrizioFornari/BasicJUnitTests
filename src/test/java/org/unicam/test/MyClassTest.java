@@ -22,7 +22,7 @@ import org.unicam.main.MyClass;
 
 public class MyClassTest {
 
-	//@Test
+	@Test
 	public void testExceptionIsThrown() {
 
 		MyClass tester = new MyClass(); // MyClass is tested
@@ -89,8 +89,8 @@ public class MyClassTest {
 		assertNotNull(word);
 	}
 
-	//@ParameterizedTest
-	//@ValueSource(strings = { "pippo", "radar", "able was I ere I saw elba" })
+	@ParameterizedTest
+	@ValueSource(strings = { "pippo", "radar", "able was I ere I saw elba" })
 	void palindromes(String candidate) {
 		MyClass tester = new MyClass();
 		assertTrue(tester.isPalindrome(candidate));
@@ -119,7 +119,7 @@ public class MyClassTest {
 		}
 	}
 
-	//@Test
+	@Test
 	void timeoutExceeded() {
 		// The following assertion fails with an error message similar to:
 		// execution exceeded timeout of 10 ms by 91 ms
@@ -129,7 +129,7 @@ public class MyClassTest {
 		});
 	}
 	
-	 //@Test
+	 @Test
 	    void timeoutExceededWithPreemptiveTermination() {
 	        // The following assertion fails with an error message similar to:
 	        // execution timed out after 10 ms
