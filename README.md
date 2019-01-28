@@ -6,5 +6,5 @@ https://shields.io
 ![CRAN/METACRAN](https://img.shields.io/cran/l/devtools.svg)
 
 https://shields.io
-[![Build Status](https://travis-ci.org/FabrizioFornari/BasicJUnitTests.svg?branch=master))](https://travis-ci.org/FabrizioFornari/BasicJUnitTests) 
+[![Build Status](https://travis-ci.org/FabrizioFornari/BasicJUnitTests.svg?branch=master)](https://travis-ci.org/FabrizioFornari/BasicJUnitTests) 
 
