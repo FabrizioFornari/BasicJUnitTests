@@ -45,7 +45,7 @@ class EmptyTest {
 	void tearDown() throws Exception {
 	}
 
-	//@Test
+	@Test
 	void test() {
 		fail("Not yet implemented");
 	}
