@@ -9,8 +9,7 @@ https://shields.io
 [![Build Status](http://pros.unicam.it:8080/jenkins/buildStatus/icon?job=BasicJUnitTests)](http://pros.unicam.it:8080/jenkins/me/my-views/view/all/job/BasicJUnitTests/) 
 
 
-[Travis CI]
-[![Build Status](https://img.shields.io/travis/:FabrizioFornari/:BasicJUnitTests.svg?branch=master)](https://travis-ci.org/FabrizioFornari/BasicJUnitTests) 
+
 
 
 
