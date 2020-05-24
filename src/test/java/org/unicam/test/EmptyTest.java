@@ -47,7 +47,7 @@ class EmptyTest {
 	}
 
 	@Test
-	@Disabled
+	//@Disabled
 	void test() {
 		fail("Not yet implemented");
 	}
